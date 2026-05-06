@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ReactMarkdown from "react-markdown";
-import '../styles/App.css';
+import MarkdownEditor from "./MarkdownEditor";
+import "../styles/App.css";
 
 function App() {
-  const [markdown, setMarkdown] = useState("# Start typing markdown...");
+  const [markdown, setMarkdown] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,15 +12,12 @@ function App() {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <div className="loading"><h1>Loading...</h1></div>;
   }
 
   return (
     <div className="app">
-      <textarea value={markdown} onChange={(e) => setMarkdown(e.target.value)} />
-      <ReactMarkdown className="preview">
-        {markdown}
-      </ReactMarkdown>
+      <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
     </div>
   );
 }
