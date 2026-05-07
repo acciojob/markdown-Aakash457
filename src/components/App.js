@@ -18,7 +18,7 @@ function App(){
   useEffect(() => {
     setTimeout(changeLoadingVar,3000)
   },[]);
-
+ 
     if(loading){
       return (<div><h1>Loading...</h1></div>)
     }
