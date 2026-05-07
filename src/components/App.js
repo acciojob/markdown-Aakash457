@@ -29,7 +29,7 @@ function App(){
         <ReactMarkdown className="preview" children={markdown}/>
       </div>
     )
-}
+} 
 
 // class App extends React.Component{
 
