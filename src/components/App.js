@@ -8,6 +8,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 3000);
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -21,7 +22,10 @@ function App() {
 
   return (
     <div className="app">
-      <MarkdownEditor markdown={markdown} setMarkdown={setMarkdown} />
+      <MarkdownEditor
+        markdown={markdown}
+        setMarkdown={setMarkdown}
+      />
     </div>
   );
 }
